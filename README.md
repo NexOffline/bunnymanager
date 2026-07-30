@@ -2,7 +2,7 @@
 
 <img src="assets/images/bunny-logo.png" alt="Bunny Manager logo" width="180">
 
-# 🐰 Bunny Manager
+# 🐇 Bunny Manager
 
 ### A cozy little control center for FiveM audio and GTA V graphics
 
