@@ -57,7 +57,7 @@ THEMES = {
 
 def _appearance_file():
     base = os.environ.get("LOCALAPPDATA", os.path.expanduser("~"))
-    return os.path.join(base, "SoundpackInstaller", "appearance.json")
+    return os.path.join(base, "BunnyManager", "appearance.json")
 
 
 def _saved_theme():
@@ -101,7 +101,7 @@ def load_bundled_fonts():
 load_bundled_fonts()
 
 
-class SoundpackInstaller(ctk.CTk):
+class BunnyManager(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.title("Bunny Manager")
@@ -204,7 +204,7 @@ class SoundpackInstaller(ctk.CTk):
     @staticmethod
     def _preset_file():
         base = os.environ.get("LOCALAPPDATA", os.path.expanduser("~"))
-        return os.path.join(base, "SoundpackInstaller", "gta_settings_presets.json")
+        return os.path.join(base, "BunnyManager", "gta_settings_presets.json")
 
     def _load_presets(self):
         try:
@@ -1521,4 +1521,4 @@ class SoundpackInstaller(ctk.CTk):
 
 
 if __name__ == "__main__":
-    SoundpackInstaller().mainloop()
+    BunnyManager().mainloop()

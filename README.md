@@ -87,7 +87,7 @@ settings.xml.backup
 - Store presets locally in:
 
 ```text
-%LOCALAPPDATA%\SoundpackInstaller\gta_settings_presets.json
+%LOCALAPPDATA%\BunnyManager\gta_settings_presets.json
 ```
 
 ### 🎨 Neon themes
@@ -96,7 +96,7 @@ Choose from **Pink**, **Red**, **Blue**, **Green**, or **Orange**. Your choice
 is remembered in:
 
 ```text
-%LOCALAPPDATA%\SoundpackInstaller\appearance.json
+%LOCALAPPDATA%\BunnyManager\appearance.json
 ```
 
 The interface includes a dark glass-inspired shell, a theme-colored neon
@@ -113,21 +113,25 @@ horizon, the bundled Orbitron font, and animated feedback cards. ✨
 
 ## 🚀 Getting started
 
-### Option 1: Run the bundled app
+### Option 1: Download from GitHub Releases
 
-This repository currently includes a Windows build at:
+For the easiest installation, download the latest prebuilt version from the
+**[Bunny Manager Releases page](https://github.com/NexOffline/bunnymanager/releases)**.
 
-```text
-dist\BunnyManager.exe
-```
-
-1. Download or clone the repository.
-2. Open the `dist` folder.
-3. Run `BunnyManager.exe`.
-4. If Windows displays a security prompt for an unsigned application, inspect
-   the file and choose whether you trust the local build before continuing.
+1. Open the [latest releases](https://github.com/NexOffline/bunnymanager/releases).
+2. Choose the newest release.
+3. Expand **Assets** if GitHub has not already displayed the downloads.
+4. Download the Bunny Manager Windows build uploaded with that release.
+5. Extract the archive if it is compressed, then run `BunnyManager.exe`.
+6. If Windows displays a security prompt for an unsigned application, inspect
+   the downloaded file and choose whether you trust it before continuing.
 
 No separate Python installation is needed for the bundled executable.
+
+> [!TIP]
+> Download builds only from the official repository above. The source tree is
+> intended for development; release assets are the recommended option for
+> regular users.
 
 ### Option 2: Run from source
 
@@ -221,12 +225,11 @@ icon:
 
 ```powershell
 python -m pip install pyinstaller customtkinter Pillow
-pyinstaller .\SoundpackInstaller.spec --clean
+pyinstaller .\BunnyManager.spec --clean
 ```
 
-The spec currently names its generated executable `SoundpackInstaller.exe`.
-Rename it to `BunnyManager.exe` after building if you want it to match the
-existing file in `dist`.
+The generated executable will be written to `dist\BunnyManager.exe`. Upload
+that executable—or an archive containing it—to a new GitHub Release.
 
 ## 📁 Project structure
 
@@ -235,10 +238,8 @@ bunnymanager/
 ├── assets/
 │   ├── fonts/                  # Orbitron font files and license
 │   └── images/                 # Bunny logo and Windows icon
-├── dist/
-│   └── BunnyManager.exe        # Bundled Windows application
 ├── soundpack_copier.py         # Main UI and application logic
-├── SoundpackInstaller.spec     # PyInstaller build configuration
+├── BunnyManager.spec           # PyInstaller build configuration
 └── README.md
 ```
 
